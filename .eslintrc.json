@@ -1,23 +1,6 @@
 {
-    "root": true,
-    "ignorePatterns": [
-      "projects/**/*"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "*.ts"
-        ],
-        "parserOptions": {
-          "project": [
-            "tsconfig.json",
-            "e2e/tsconfig.json"
-          ],
-          "createDefaultProgram": true
-        },
-        "extends": [
-          "eslint:recommended",
-        ],
-        }
-    ]
-  }
+    "rules": {
+        "semi": ["error", "always"],
+        "quotes": ["error", "double"]
+    }
+}
