@@ -15,7 +15,7 @@ pipeline {
                 sh 'npm install'
             }
         }
-         stage('Build Docker Image') {
+         stage('Push Docker Image') {
             steps {
                 script {
                 docker.withRegistry('nexus-ynov-sandbox.asys-cloud.fr/repository/ynov-docker/ynov-core-core-ui-angular-amarionneau', 'd0988e3f-63be-488d-93f9-3e9d9cdacfd4') {
@@ -40,6 +40,10 @@ pipeline {
                 }
             }
         }
+        stage('Build') {
+            steps {
+                sh 'npm run build-client'
+            }
+        }
     }
   }
-}
