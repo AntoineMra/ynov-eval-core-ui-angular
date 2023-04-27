@@ -13,7 +13,6 @@ pipeline {
         stage('Compile') {
             steps {
                 sh 'npm install'
-                sh 'npm run start'
             }
         }
         stage('Lint') {
@@ -24,6 +23,13 @@ pipeline {
             }
         }
         stage('Test') {
+            steps {
+                script {
+                    sh 'npm run test'
+                }
+            }
+        }
+                stage('Test') {
             steps {
                 script {
                     sh 'npm run test'
