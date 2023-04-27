@@ -18,7 +18,7 @@ pipeline {
          stage('Push Docker Image') {
             steps {
                 script {
-                docker.withRegistry('nexus-ynov-sandbox.asys-cloud.fr/repository/ynov-docker/ynov-core-core-ui-angular-amarionneau', 'd0988e3f-63be-488d-93f9-3e9d9cdacfd4') {
+                docker.withRegistry('https://nexus-ynov-sandbox.asys-cloud.fr/repository/ynov-docker/ynov-core-core-ui-angular-amarionneau', 'd0988e3f-63be-488d-93f9-3e9d9cdacfd4') {
                     def image_name = "${project.name}:${version}"
                     docker.build(image_name, ".")
                     docker.image(image_name).push()
