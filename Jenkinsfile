@@ -22,9 +22,10 @@ pipeline {
                     def image_name = "${project.name}:${version}"
                     docker.build(image_name, ".")
                     docker.image(image_name).push()
+                    }
                 }
             }
-        }
+         }
         stage('Lint') {
             steps {
                 script {
